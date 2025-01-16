@@ -38,18 +38,22 @@ export default function CuntryFlag(){
    
     const [serchText,setserchText]=useState("");
     const [countryData,setCountryData]=useState([]);
-    useEffect(()=>{
-      const fetchCuntries= async()=>{
-        try{
-            const response= await fetch(citiesApi);
-            const jsonData= await response.json();
-            setCountryData(jsonData)
-        }catch(error){
-            console.error("Error fetching data:",error)
+    async function fetchData(url) {
+        try {
+          const response = await fetch(citiesApi);
+      
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+      
+          setCountryData( await response.json());
+          console.log('Data retrieved:', setCountryData);
+          return setCountryData;
+        } catch (error) {
+          console.error('Error during API call:', error);
         }
-      };
-      fetchCuntries();
-    },[])
+      }
+      fetchData();
      const filteredData=countryData.filter((country)=> country.common.toLocaleLowerCase().includes(serchText.toLocaleLowerCase()));
     const handelChange=(e)=>{
         setserchText(e.target.value)
