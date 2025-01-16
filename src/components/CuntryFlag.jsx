@@ -25,7 +25,7 @@ const CuntryCard=({flag,name})=>{
                 width:"100px"
             }}
             />
-            <p2>{name}</p2>
+            <h2>{name}</h2>
             
         </div>
     )
