@@ -75,7 +75,7 @@ export default function CuntryFlag(){
             >
               
            {filteredData.map((cuntryData)=>(
-            <countryCard key={cuntryData.abbr} name={cuntryData.common} flag={cuntryData.png}/>
+            <countryCard  name={cuntryData.common} flag={cuntryData.png}/>
            ))
 
            }
