@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 
-const countryCard=({flag,name})=>{
+const CountryCard=({flag,name})=>{
     return(
         <div className="countryCard"
             style={{
@@ -75,7 +75,7 @@ export default function CuntryFlag(){
             >
               
            {filteredData.map((cuntryData)=>(
-            <countryCard  name={cuntryData.common} flag={cuntryData.png}/>
+            <CountryCard  name={cuntryData.common} flag={cuntryData.png}/>
            ))
 
            }
