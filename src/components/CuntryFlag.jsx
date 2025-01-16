@@ -19,7 +19,7 @@ const CountryCard=({flag,name})=>{
                 
             }}
             >
-            <img src={flag} alt={name + "flag"}
+            <img src={flag} alt={`${name} flag`}
             style={{
                 height:"100px",
                 width:"100px"
